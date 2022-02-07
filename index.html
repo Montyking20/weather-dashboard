@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>    
+      Weather Dashboard
+    </title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.openweathermap.org; img-src https://openweathermap.org;">  </head>
+<link rel="stylesheet" href="./assets/css/style.css">  
+  
+<body>
+
+    <!-- Header -->
+    <header>
+       <h1> Weather Dashboard </h1>
+    </header>
+
+
+    <!-- Body -->
+<main class="box-row">
+  <aside class="left-nav">
+    <!-- Search -->
+    <section class="search-box">
+        <form action="#" id="search-area">
+              <strong><label for="city-search" id="cityLabel">Search for a City:</label></strong>
+              <input type="text" id="city-search" placeholder="Denver">
+              <button type="SUBMIT" class="search-btn" id="search-id">SEARCH</button>       
+    </form>
+    </section>
+    <!-- Search History -->
+    <section class="search-history">
+        <details>
+            <ul id="search-history-list"></ul>
+        </details>
+    </section>
+  </aside>
+  <!-- Current Weather -->
+  <section class="daily-forcast-col hide" id="main-weather-area">
+      <section class="current-weather" id="main-box">
+      </section>
+   <!-- 5 DAY -->
+<div id="five-day" id="five-forecast">Five Day Forcast:</div>
+    <section class="five-day-row">
+      <section class="day"> </section>
+      <section class="day"> </section>
+      <section class="day"> </section>
+      <section class="day"> </section>
+      <section class="day"> </section>
+    </section> 
+  </section>   
+</main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h2>Made with ❤️️ by JAWS</h2>
+      <p>&copy; 2021 JAWS Services, Inc. </p>
+    </footer>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

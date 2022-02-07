@@ -1,0 +1,233 @@
+
+
+/* main styles */
+
+header{
+    font-size: 25px;
+    top: 0px;
+    margin: 0;
+    text-align: center;
+    padding: 1pt;
+    background: #13104e;
+    background: linear-gradient(90deg, #080549 0%, #1b1b55 35%, #afb94d 100%);
+    color: #ffffff;
+}
+
+ul{
+ list-style-type:none;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* class styles  */
+/* Main flexbox row */
+
+.box-row {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/*  Search */
+
+.left-nav {
+    width: 20%;
+    margin-right: 2rem;
+    margin-left: 1rem;
+}
+
+.search-box {
+    min-width: 100%;
+}
+
+.search-btn {
+    min-width: 100%;
+    padding: 1rem;
+}
+
+.search-history {
+    border-top: .07rem solid #000000;
+    margin-top: 2rem;
+}
+
+/*  Main Weather Box */
+
+.current-weather{
+    border: #000000 .07rem solid;
+    margin-top: 1rem;
+    margin-right: 4rem;
+}
+
+.current-weather div, h3 {
+    margin: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.current-weather h3 {
+    display: inline;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.daily-forcast-col {
+    min-width: 80%;
+}
+
+.five-day-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days {
+    width: 12rem;
+    height: 16rem;
+    margin-left: 1rem;
+    background-color: #b15050;
+    color: #faebd7;
+}
+
+.days div {
+    margin-bottom: 1.2rem;
+    margin-left: .5rem;
+}
+
+.days:first-child {
+    margin-left: 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* Dynamically added UVI classes */
+/* Low is 0-2 - moderate 3-5 high 6-7 v high 8-10 extreme 11+ */
+
+.low-uvi {
+    background-color: rgb(51, 218, 113);
+    border-radius: .4rem;
+    width: 9rem;
+}
+
+.mod-uvi {
+    background-color: rgb(214, 230, 33);
+    border-radius: .4rem;
+    width: 9rem;
+}
+
+.high-uvi {
+    background-color: rgb(245, 185, 33);
+    border-radius: .4rem;
+    width: 9rem;
+}
+
+.ext-uvi {
+    background-color: rgb(233, 30, 30);
+    border-radius: .4rem;
+    width: 9rem;
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    font-family: 'Arial', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+    text-align: center;
+  }
+  
+  .footer h2 {
+    font-size: 20px;
+  }
+
+/* id styles */
+
+#main-box {
+    min-width: 70%;
+    height: 20rem;
+}
+
+
+/* search id */
+
+#cityLabel{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+#city-search {
+    width: 85%;
+    font-size: 12pt;
+    padding: 1rem;
+    margin-bottom: .5rem;
+}
+
+#search-id {
+    background-color: #b15050;
+    border: none;
+    border-radius: .5rem;
+    color: #182541;
+    font-weight: bold;
+}
+
+#search-id:hover {
+    background-color: #324dc2;
+    color: #e97979;
+    font-weight: bold;
+}
+
+#search-history-list button{
+    margin-top: .6rem;
+    border: none;
+    border-radius: .5rem;
+}
+
+#search-history-list button:hover{
+    box-shadow:  0px 16px 11px 0 #000, 
+    0 12px 5px 0px #ccc;
+    background-color: rgb(186, 184, 184);
+}
+
+#five-day {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+
+/* Media changes */
+
+@media only screen and (max-width: 1280px) {
+    .days {
+        width: 10rem;
+        height: 14rem;
+        margin-left: .5rem;
+        background-color: rgb(61, 69, 116);
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1045px) {
+    .days:first-child{
+        margin-left: .5rem;
+    }
+
+    .days {
+        width: 10rem;
+        height: 14rem;
+        margin: .5rem;
+        background-color: rgb(61, 69, 116);
+        color: white;
+    }
+
+}
