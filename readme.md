@@ -43,7 +43,7 @@ presented with current and future conditions for that city. <br>
 
 <p align= "center" style= "color:#b38d25">Main</p>
 
-![Code Quiz](/assets/images/Screenshot-main.jpg)
+![Weather Dashboard](/assets/images/Screenshot-main.jpg)
 
 <br>
 
