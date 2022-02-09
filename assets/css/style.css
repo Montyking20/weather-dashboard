@@ -30,7 +30,6 @@ body{
 /* Main flexbox row */
 
 .box-row {
-    display: -webkit-flex;
     display: flex;
     width: 100%;
     margin-bottom: 2rem;
@@ -64,14 +63,18 @@ body{
     border: #000000 .07rem solid;
     margin-top: 1rem;
     margin-right: 4rem;
+    background-color: #a2a2a8;
 }
 
-.current-weather div, h3 {
+.current-weather li, h1 {
     margin: 1.2rem;
     font-size: 1.2rem;
+    list-style-type: none;
+
 }
 
-.current-weather h3 {
+
+.current-weather h1 {
     display: inline;
     font-size: 2rem;
     margin-top: 0;
@@ -86,20 +89,21 @@ body{
     flex-wrap: wrap;
 }
 
-.days {
+.day {
     width: 12rem;
     height: 16rem;
     margin-left: 1rem;
-    background-color: #b15050;
-    color: #faebd7;
+    background-color: #e9e3b1;
+    color: #020202;
 }
 
-.days div {
+.day li {
     margin-bottom: 1.2rem;
     margin-left: .5rem;
+    list-style-type: none;
 }
 
-.days:first-child {
+.day:first-child {
     margin-left: 0;
 }
 
@@ -198,7 +202,7 @@ body{
     background-color: rgb(186, 184, 184);
 }
 
-#five-day {
+#five-day-forecast {
     font-size: 1.5rem;
     font-weight: bolder;
 }
@@ -208,7 +212,7 @@ body{
 /* Media changes */
 
 @media only screen and (max-width: 1280px) {
-    .days {
+    .day {
         width: 10rem;
         height: 14rem;
         margin-left: .5rem;
@@ -218,11 +222,11 @@ body{
 }
 
 @media only screen and (max-width: 1045px) {
-    .days:first-child{
+    .day:first-child{
         margin-left: .5rem;
     }
 
-    .days {
+    .day {
         width: 10rem;
         height: 14rem;
         margin: .5rem;
