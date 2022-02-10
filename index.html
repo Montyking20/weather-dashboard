@@ -2,19 +2,19 @@
 <html>
   <head>
     <title>Weather Dashboard</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; connect-src https://api.openweathermap.org; img-src https://openweathermap.org;">
-    <link rel="stylesheet" href="./assets/css/style.css">
+      content="default-src 'self'; connect-src https://api.openweathermap.org; img-src https://openweathermap.org;" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
     <!-- Header -->
     <header>
-      <h1>Weather Dashboard</h1>
+      <h1 class="title">Weather Dashboard</h1>
     </header>
 
     <!-- Body -->
@@ -28,7 +28,7 @@
                 >Search for a City:</label
               ></strong
             >
-            <input type="text" id="city-search" placeholder="Denver">
+            <input type="text" id="city-search" placeholder="Denver" />
             <button type="SUBMIT" class="search-btn" id="search-id">
               SEARCH
             </button>
@@ -36,9 +36,8 @@
         </section>
         <!-- Search History -->
         <section class="search-history">
-          <details>
-            <ul id="search-history-list"></ul>
-          </details>
+          <ul id="search-history-list"></ul>
+          <!-- <details></details> -->
         </section>
       </aside>
       <!-- Current Weather -->
