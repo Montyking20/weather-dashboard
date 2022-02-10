@@ -47,11 +47,5 @@ presented with current and future conditions for that city. <br>
 
 <br>
 
-<p align= "center" style= "color:#b38d25">Weather</p>
-
-![Password size](/assets/images/Screenshot-weather.jpg)
-
-<br>
-
 
 

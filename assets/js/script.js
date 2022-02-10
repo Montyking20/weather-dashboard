@@ -130,7 +130,10 @@ function getLocal() {
     newCityButton.classList.add("city-button");
 
     searchHistory.appendChild(newCityButton);
+ 
+
   }
+  
 }
 getLocal();
 
