@@ -15,7 +15,7 @@ async function callAPI(url) {
 async function displayWeather(forecast, cityName) {
   document.getElementById("main-weather-area").classList.remove("hide");
   document.getElementById("main-box").innerHTML = "";
-
+  
   const searchedCity = document.createElement("h1");
   const day = document.createElement("h1");
   const icon = document.createElement("img");
@@ -52,7 +52,12 @@ async function displayWeather(forecast, cityName) {
   document.getElementById("main-box").appendChild(uvi);
 
   // 5 day Forecast
+  
+
   const weekDays = document.querySelectorAll(".day");
+  weekDays.forEach(element => {
+       element.innerHTML = ""   
+  });
   for (let I = 0; I < weekDays.length; I++) {
     let dayForecast = forecast.daily[I];
     const fiveDay = document.createElement("h1");
@@ -62,6 +67,9 @@ async function displayWeather(forecast, cityName) {
     const dayHumidity = document.createElement("li");
     const dayUvi = document.createElement("li");
     let fiveUTC = dayForecast.dt * 1000 + 86400;
+    
+
+    
 
     fiveDay.textContent = new Date(fiveUTC).toLocaleDateString("en-US", {
       day: "numeric",
@@ -103,24 +111,38 @@ async function grabWeather(cityName) {
 // Search Form Handler
 function searchFormGrabber(event) {
   event.preventDefault();
-  const cityName = document.getElementById("city-search").value;
-  const searchHistory = document.getElementById("search-history-list");
+  const cityNameUpper = document.getElementById("city-search").value;
+  const cityName = cityNameUpper.toUpperCase()
+  // const searchHistory = document.getElementById("search-history-list");
   const newCityButton = document.createElement("button");
   newCityButton.textContent = cityName;
 
   newCityButton.classList.add("city-button");
 
   setToLocal(cityName);
-  searchHistory.appendChild(newCityButton);
-
+  // searchHistory.appendChild(newCityButton);
+  getLocal()
   grabWeather(cityName);
 }
+
 //  local storage
 function setToLocal(city) {
-  cityHistory.push(city);
-  localStorage.setItem("searchName", JSON.stringify(cityHistory));
+  let oldSearch=[]
+  if (localStorage.searchName){
+      oldSearch = JSON.parse(localStorage.getItem("searchName"))
+  }
+  if(oldSearch && oldSearch.includes(city)){
+    return
+  }
+    else{
+      cityHistory.push(city);
+      localStorage.setItem("searchName", JSON.stringify(cityHistory));
+    }
+
+  
 }
 function getLocal() {
+  document.getElementById("search-history-list").innerHTML = ""
   let getHistory = localStorage.getItem("searchName");
   cityHistory = JSON.parse(getHistory);
   for (let i = 0; i < cityHistory.length; i++) {
@@ -130,12 +152,13 @@ function getLocal() {
     newCityButton.classList.add("city-button");
 
     searchHistory.appendChild(newCityButton);
- 
-
   }
-  
 }
-getLocal();
+
+if(localStorage.searchName) {
+  getLocal()
+}
+
 
 // Event listeners
 document
