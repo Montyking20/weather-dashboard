@@ -11,11 +11,10 @@ async function callAPI(url) {
 }
 
 // Current Weather
-
 async function displayWeather(forecast, cityName) {
   document.getElementById("main-weather-area").classList.remove("hide");
   document.getElementById("main-box").innerHTML = "";
-  
+
   const searchedCity = document.createElement("h1");
   const day = document.createElement("h1");
   const icon = document.createElement("img");
@@ -52,11 +51,9 @@ async function displayWeather(forecast, cityName) {
   document.getElementById("main-box").appendChild(uvi);
 
   // 5 day Forecast
-  
-
   const weekDays = document.querySelectorAll(".day");
-  weekDays.forEach(element => {
-       element.innerHTML = ""   
+  weekDays.forEach((element) => {
+    element.innerHTML = "";
   });
   for (let I = 0; I < weekDays.length; I++) {
     let dayForecast = forecast.daily[I];
@@ -67,9 +64,6 @@ async function displayWeather(forecast, cityName) {
     const dayHumidity = document.createElement("li");
     const dayUvi = document.createElement("li");
     let fiveUTC = dayForecast.dt * 1000 + 86400;
-    
-
-    
 
     fiveDay.textContent = new Date(fiveUTC).toLocaleDateString("en-US", {
       day: "numeric",
@@ -112,7 +106,7 @@ async function grabWeather(cityName) {
 function searchFormGrabber(event) {
   event.preventDefault();
   const cityNameUpper = document.getElementById("city-search").value;
-  const cityName = cityNameUpper.toUpperCase()
+  const cityName = cityNameUpper.toUpperCase();
   // const searchHistory = document.getElementById("search-history-list");
   const newCityButton = document.createElement("button");
   newCityButton.textContent = cityName;
@@ -120,29 +114,27 @@ function searchFormGrabber(event) {
   newCityButton.classList.add("city-button");
 
   setToLocal(cityName);
+
   // searchHistory.appendChild(newCityButton);
-  getLocal()
+  getLocal();
   grabWeather(cityName);
 }
 
 //  local storage
 function setToLocal(city) {
-  let oldSearch=[]
-  if (localStorage.searchName){
-      oldSearch = JSON.parse(localStorage.getItem("searchName"))
+  let oldSearch = [];
+  if (localStorage.searchName) {
+    oldSearch = JSON.parse(localStorage.getItem("searchName"));
   }
-  if(oldSearch && oldSearch.includes(city)){
-    return
+  if (oldSearch && oldSearch.includes(city)) {
+    return;
+  } else {
+    cityHistory.push(city);
+    localStorage.setItem("searchName", JSON.stringify(cityHistory));
   }
-    else{
-      cityHistory.push(city);
-      localStorage.setItem("searchName", JSON.stringify(cityHistory));
-    }
-
-  
 }
 function getLocal() {
-  document.getElementById("search-history-list").innerHTML = ""
+  document.getElementById("search-history-list").innerHTML = "";
   let getHistory = localStorage.getItem("searchName");
   cityHistory = JSON.parse(getHistory);
   for (let i = 0; i < cityHistory.length; i++) {
@@ -155,10 +147,9 @@ function getLocal() {
   }
 }
 
-if(localStorage.searchName) {
-  getLocal()
+if (localStorage.searchName) {
+  getLocal();
 }
-
 
 // Event listeners
 document
